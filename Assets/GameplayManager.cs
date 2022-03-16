@@ -19,6 +19,10 @@ public class GameplayManager : MonoBehaviour
 
     public List<Player> players;
     //these are used to disable the other UI elements when the game ends
+    
+    public delegate void TestEvent();
+
+    public event TestEvent Test;
 
     public void OnEnable()
     {
@@ -57,5 +61,10 @@ public class GameplayManager : MonoBehaviour
             victorySpeech = player.myName + " is victorious";
             // DisableUIOnVictory();
             // return victorySpeech;
+    }
+
+    protected virtual void OnTest()
+    {
+        Test?.Invoke();
     }
 }

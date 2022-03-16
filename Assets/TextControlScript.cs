@@ -23,9 +23,13 @@ public class TextControlScript : MonoBehaviour
         // Get a reference to the text component.
         // Since we are using the base class type <TMP_Text> this component could be either a <TextMeshPro> or <TextMeshProUGUI> component.
         _mTextComponent = GetComponent<TMP_Text>();
- 
-       
+
         _mTextComponent.text = ("Player 1's key is " + gameplayManager.GetComponent<GameplayManager>());
+
+        void PrintThing()
+        {
+            
+        }
 
     }
 }
